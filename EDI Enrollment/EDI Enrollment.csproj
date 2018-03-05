@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2EC9315C-D44F-4E7E-863E-C37AB1071729}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EDI_Enrollment</RootNamespace>
+    <AssemblyName>EDI Enrollment</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Claim.cs" />
+    <Compile Include="ControlNumbers.cs" />
+    <Compile Include="EDI_Claim_File.cs" />
+    <Compile Include="EDI_Enrollment_File.cs" />
+    <Compile Include="EDIFile.cs" />
+    <Compile Include="EnumHelpers.cs" />
+    <Compile Include="ImportFile.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Structs.cs" />
+    <Compile Include="Enrollee.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="import templates\Claim Import - Sample.xlsx" />
+    <None Include="import templates\Enrollee Import - Sample.xlsx" />
+    <None Include="import templates\import.dat" />
+    <None Include="samples\claims\X222-ambulance.edi" />
+    <None Include="samples\claims\X222-anesthesia.edi" />
+    <None Include="samples\claims\X222-chiropractic.edi" />
+    <None Include="samples\claims\X222-COB-claim-from-billing-provider-to-payer-a.edi" />
+    <None Include="samples\claims\X222-COB-claim-from-billing-provider-to-payer-b.edi" />
+    <None Include="samples\claims\X222-COB-claim-from-payer-a-to-payer-b-in-payer-to-payer.edi" />
+    <None Include="samples\claims\X222-commercial-health-insurance.edi" />
+    <None Include="samples\claims\X222-drug-administered-in-the-physician-office.edi" />
+    <None Include="samples\claims\X222-encounter.edi" />
+    <None Include="samples\claims\X222-home-infusion-therapy-pharmacy-%28adjudicated-with-HCPCS-in-loop-2400-or-NDC-in-loop-2410%29.edi" />
+    <None Include="samples\claims\X222-home-infusion-therapy-pharmacy-%28adjudicated-with-NDC-in-loop-2410%29.edi" />
+    <None Include="samples\claims\X222-medicare-secondary-payer-COB.edi" />
+    <None Include="samples\claims\X222-out-of-network-repriced-claim.edi" />
+    <None Include="samples\claims\X222-oxygen.edi" />
+    <None Include="samples\claims\X222-ppo-repriced-claim.edi" />
+    <None Include="samples\claims\X222-wheelchair.edi" />
+    <None Include="samples\enrollment\X220-add-dependent-%28full-time-student%29-to-existing-enrollment.edi" />
+    <None Include="samples\enrollment\X220-add-subscriber-coverage.edi" />
+    <None Include="samples\enrollment\X220-cancel-a-dependent.edi" />
+    <None Include="samples\enrollment\X220-change-subscriber-information.edi" />
+    <None Include="samples\enrollment\X220-enroll-employee-in-managed-care-product.edi" />
+    <None Include="samples\enrollment\X220-enroll-employee-in-multiple-health-care-insurance-products.edi" />
+    <None Include="samples\enrollment\X220-reinstate-an-employee.edi" />
+    <None Include="samples\enrollment\X220-reinstate-employee-at-coverage-%28hd%29-level.edi" />
+    <None Include="samples\enrollment\X220-reinstate-member-eligibility-%28ins%29.edi" />
+    <None Include="samples\enrollment\X220-terminate-eligibility-for-subscriber.edi" />
+    <None Include="specs\837 Implementation Specs\006020CC.PDF" />
+    <None Include="specs\837 Implementation Specs\45433 EDI Companion Guide_v3.pdf" />
+    <None Include="specs\837 Implementation Specs\837_5010_Companion_Guide.pdf" />
+    <None Include="specs\837 Implementation Specs\edifecs-CORE-837-Prof-5010-CG.pdf" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
