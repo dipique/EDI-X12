@@ -1,5 +1,5 @@
 # EDI-X12
-Rough process for generating EDI X12 834 and 837 files from a CSV file. It is not a flexible implementation (i.e. it doesn't provide particularly easy paths to READING EDI files, and the actual generation is a little clunky relative to, for example, using an XML template); however, it IS very flexible and allows for very easy changes to specific values based on arbitrary code needed for your business case.
+Rough process for generating EDI X12 834 and 837 files from a CSV file. It is not a flexible implementation (i.e. it doesn't provide particularly easy paths to READING EDI files, and the actual generation is a little clunky relative to, for example, using an XML template); however, it DOES allow for very easy changes to specific values based on arbitrary code needed for your business case.
 
 For testing (or hell, for production, who am I to say) it has the ability to translate CSV data into intermediate CLR objects, then from those objects to X12 files, and those steps are totally separate so you can easily use the code to, for example, pull from a database instead of text files.
 
